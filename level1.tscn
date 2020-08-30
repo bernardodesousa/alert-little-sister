@@ -25,7 +25,8 @@ scale = Vector2( 2.74198, 0.206407 )
 texture = ExtResource( 1 )
 
 [node name="test_block" type="RigidBody2D" parent="."]
-position = Vector2( 219.803, 127.662 )
+position = Vector2( 315.911, 79.6078 )
+gravity_scale = 12.0
 __meta__ = {
 "_edit_group_": true
 }
