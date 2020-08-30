@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/Caco_iddle.png" type="Texture" id=1]
+[ext_resource path="res://Caco.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.5785
 height = 107.049
 
 [node name="Caco" type="KinematicBody2D"]
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
