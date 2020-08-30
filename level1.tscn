@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Caco.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sister.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level1.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 131.677, 10 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2( 226.21, 548.385 )

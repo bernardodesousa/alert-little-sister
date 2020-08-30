@@ -5,7 +5,7 @@ const GRAVITY = 30
 const SPEED = 180
 const JUMPFORCE = -900
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_pressed("right"):
 		velocity.x = SPEED
 		$Sprite.play("walk")
