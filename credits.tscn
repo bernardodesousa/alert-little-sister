@@ -8,9 +8,22 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_right = 229.0
-margin_bottom = 40.0
-text = "Créditos"
+margin_right = 788.0
+margin_bottom = 456.0
+text = "Créditos
+
+Elias Sousa - Game Design, arte, gestão de projeto.
+
+
+Valeu pela ajuda, pessoal!
+
+
+Pedro Bernardo de Sousa (papai) - desenvolvimento
+Cecília Costa Cabral Sousa (mamãe) - texto
+Lucas Bernardo de Sousa (primo) - música
+
+Agradecimento especial a:
+Esther Sousa (irmã) - inspiração"
 __meta__ = {
 "_edit_use_anchors_": false
 }

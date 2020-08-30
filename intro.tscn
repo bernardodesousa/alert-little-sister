@@ -8,9 +8,16 @@ __meta__ = {
 }
 
 [node name="title" type="RichTextLabel" parent="."]
-margin_right = 369.0
-margin_bottom = 40.0
-text = "Alert! Little Sister"
+margin_right = 559.0
+margin_bottom = 176.0
+text = "Oi, meu nome é Caco e eu tenho uma irmãzinha muito fofa. 
+
+Mas às vezes ela é meio grudenta e eu preciso fugir dela.
+
+Preciso da sua ajuda pra escapar do milésimo abraço grudento do dia!
+
+Basta clicar na seta pra eu avançar. 
+E clicar na barra de espaço pra eu pular os obbstáculos."
 __meta__ = {
 "_edit_use_anchors_": false
 }
