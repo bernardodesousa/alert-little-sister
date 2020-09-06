@@ -1,29 +1,43 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://world_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Caco.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sister.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level1.gd" type="Script" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 131.677, 10 )
-
-[node name="Node2D" type="Node2D"]
+[node name="Level1" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="floor" type="StaticBody2D" parent="."]
-position = Vector2( 226.21, 548.385 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="background" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 70, 70 )
+cell_custom_transform = Transform2D( 70, 0, 0, 70, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 0, 6, 0, 3, 6, 0, 6, 6, 0, 9, 6, 0, 12, 6, 0, 196608, 6, 0, 196611, 6, 0, 196614, 6, 0, 196617, 6, 0, 196620, 6, 0, 393216, 6, 0, 393219, 6, 0, 393222, 6, 0, 393225, 6, 0, 393228, 6, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-shape = SubResource( 1 )
+[node name="walls" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 70, 70 )
+format = 1
+tile_data = PoolIntArray( 262154, 20, 0, 262155, 21, 0, 262156, 21, 0, 262157, 22, 0, 327690, 536870931, 0, 327691, 14, 0, 327692, 12, 0, 327693, 19, 0, 393226, 536870929, 0, 393227, 16, 0, 393228, 16, 0, 393229, 17, 0, 458765, 17, 0 )
 
-[node name="Sprite" type="Sprite" parent="floor"]
-position = Vector2( -0.0405715, 0.0519299 )
-scale = Vector2( 2.74198, 0.206407 )
-texture = ExtResource( 1 )
+[node name="wall_objects" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 70, 70 )
+format = 1
+tile_data = PoolIntArray( 327692, 11, 0, 393227, 46, 0, 393228, 7, 0 )
+
+[node name="floor" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 70, 70 )
+format = 1
+tile_data = PoolIntArray( 458752, 31, 0, 458753, 32, 0, 458754, 32, 0, 458755, 32, 0, 458756, 32, 0, 458757, 32, 0, 458758, 32, 0, 458759, 32, 0, 458760, 32, 0, 458761, 32, 0, 458762, 32, 0, 458763, 32, 0, 458764, 32, 0, 458765, 32, 0, 458766, 33, 0, 524288, 29, 0, 524289, 23, 0, 524290, 25, 0, 524291, 23, 0, 524292, 23, 0, 524293, 23, 0, 524294, 24, 0, 524295, 23, 0, 524296, 23, 0, 524297, 25, 0, 524298, 23, 0, 524299, 23, 0, 524300, 24, 0, 524301, 23, 0, 524302, 24, 0 )
+
+[node name="obstacles" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 70, 70 )
+format = 1
+tile_data = PoolIntArray( 196615, 1, 0, 196618, 3, 0, 196619, 3, 0, 196620, 3, 0, 196621, 3, 0, 262150, 2, 0, 262151, 2, 0, 393221, 2, 0 )
 
 [node name="Caco" parent="." instance=ExtResource( 2 )]
 position = Vector2( 243.831, 81.8701 )
