@@ -13,6 +13,7 @@ animations = [ {
 } ]
 
 [node name="Sister" type="StaticBody2D"]
+scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -20,4 +21,5 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+frame = 1
 playing = true

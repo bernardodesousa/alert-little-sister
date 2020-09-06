@@ -8,6 +8,7 @@ radius = 19.5785
 height = 107.049
 
 [node name="Caco" type="KinematicBody2D"]
+scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
