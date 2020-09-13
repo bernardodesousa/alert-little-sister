@@ -29,4 +29,4 @@ func _physics_process(_delta):
 
 
 func _on_fallzone_body_entered(_body):
-	get_tree().change_scene("res://level1.tscn")
+	get_tree().change_scene("res://intro.tscn")
