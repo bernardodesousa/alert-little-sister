@@ -1,23 +1,88 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
 
-[node name="Control" type="Control"]
+[ext_resource path="res://title_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://normal_dynamicfont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://PlayButton.gd" type="Script" id=3]
+
+[node name="intro" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="title" type="RichTextLabel" parent="."]
-margin_right = 559.0
-margin_bottom = 176.0
-text = "Oi, meu nome é Caco e eu tenho uma irmãzinha muito fofa. 
-
-Mas às vezes ela é meio grudenta e eu preciso fugir dela.
-
-Preciso da sua ajuda pra escapar do milésimo abraço grudento do dia!
-
-Basta clicar na seta pra eu avançar. 
-E clicar na barra de espaço pra eu pular os obbstáculos."
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.901961, 0.819608, 0.945098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Title" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.307
+margin_top = 80.0
+margin_bottom = -5.20001
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.866667, 0.478431, 0.929412, 1 )
+custom_colors/font_outline_modulate = Color( 0.698039, 0.623529, 0.0941176, 1 )
+text = "Alert! Little Sister"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="RichTextLabel" parent="."]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 960.0
+margin_bottom = 458.0
+custom_fonts/normal_font = ExtResource( 2 )
+custom_colors/default_color = Color( 0.329412, 0.0313726, 0.505882, 1 )
+text = "Oi, meu nome é Caco e eu tenho uma irmãzinha muito fofa. Mas às vezes ela é meio grudenta e eu preciso fugir dela. Preciso da sua ajuda pra escapar do milésimo abraço grudento do dia!
+
+Usa as setas direita e esquerda para andar e barra de espaço pra pular os obstáculos.
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+anchor_top = 0.626
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 203.835
+margin_top = 50.9583
+margin_right = -571.165
+margin_bottom = -102.442
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.901961, 0.819608, 0.945098, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.866667, 0.478431, 0.929412, 1 )
+text = "Play!"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsButton" type="Button" parent="."]
+anchor_top = 0.626
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 766.726
+margin_top = 143.716
+margin_right = -8.27362
+margin_bottom = -9.68359
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.639216, 0.333333, 0.803922, 1 )
+custom_colors/font_color_hover = Color( 0.568627, 0.0862745, 0.752941, 1 )
+custom_colors/font_color_pressed = Color( 0.866667, 0.478431, 0.929412, 1 )
+text = "Céditos"
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_CreditsButton_pressed"]
