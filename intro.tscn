@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://title_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://normal_dynamicfont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://PlayButton.gd" type="Script" id=3]
+[ext_resource path="res://themeSong.tscn" type="PackedScene" id=4]
 
 [node name="intro" type="Control"]
 anchor_right = 1.0
@@ -42,8 +43,7 @@ custom_fonts/normal_font = ExtResource( 2 )
 custom_colors/default_color = Color( 0.329412, 0.0313726, 0.505882, 1 )
 text = "Oi, meu nome é Caco e eu tenho uma irmãzinha muito fofa. Mas às vezes ela é meio grudenta e eu preciso fugir dela. Preciso da sua ajuda pra escapar do milésimo abraço grudento do dia!
 
-Usa as setas direita e esquerda para andar e barra de espaço pra pular os obstáculos.
-"
+Use as setas direita e esquerda para andar e barra de espaço para pular."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -84,5 +84,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 4 )]
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_CreditsButton_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://normal_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://TitleButton.gd" type="Script" id=2]
+[ext_resource path="res://themeSong.tscn" type="PackedScene" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -19,17 +20,17 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 185.78
-margin_top = 119.955
-margin_right = 833.78
-margin_bottom = 398.955
+margin_left = 187.0
+margin_top = 120.0
+margin_right = 856.0
+margin_bottom = 466.0
 custom_fonts/normal_font = ExtResource( 1 )
 text = "Créditos
 
-Elias Sousa - game design, arte personagens, gestão de projeto.
-Pedro Bernardo de Sousa (papai) - desenvolvimento
-Cecília Costa Cabral Sousa (mamãe) - texto
-Lucas Bernardo de Sousa (primo) - música, level assets
+Elias SOUSA - game design, character art, project management
+Pedro SOUSA (papai) - software engineering
+Cecília SOUSA (mamãe) - writing
+Lucas Bernardo de Sousa (primo) - music, level assets
 
 Agradecimentos especiais a:
 Esther Sousa (irmã) - inspiração"
@@ -51,4 +52,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 3 )]
 [connection signal="pressed" from="TitleButton" to="TitleButton" method="_on_TitleButton_pressed"]

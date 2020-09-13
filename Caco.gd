@@ -27,6 +27,13 @@ func _physics_process(_delta):
 	
 	velocity.x = lerp(velocity.x, 0, 0.1)
 
-
 func _on_fallzone_body_entered(_body):
 	get_tree().change_scene("res://intro.tscn")
+
+func _on_exitZone_body_entered(body):
+	if body.name == "Caco":
+		get_tree().change_scene("res://credits.tscn")
+
+func _on_exitArea_body_entered(body):
+	if body.name == "Caco":
+		get_tree().change_scene("res://level2.tscn")
