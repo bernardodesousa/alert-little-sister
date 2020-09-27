@@ -8,7 +8,7 @@
 [ext_resource path="res://walls_tileset.tres" type="TileSet" id=6]
 [ext_resource path="res://floor_tileset.tres" type="TileSet" id=7]
 [ext_resource path="res://assets/images/bg.png" type="Texture" id=8]
-[ext_resource path="res://themeSong.tscn" type="PackedScene" id=9]
+[ext_resource path="res://music.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7424, 63.9999 )
@@ -62,10 +62,6 @@ smoothing_enabled = true
 drag_margin_left = 0.5
 editor_draw_limits = true
 
-[node name="AudioStreamPlayer2D" parent="Caco" instance=ExtResource( 9 )]
-position = Vector2( -875, -1137.5 )
-scale = Vector2( 2.5, 2.5 )
-
 [node name="Sister" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1.36494, 459.775 )
 
@@ -103,5 +99,7 @@ position = Vector2( 21179.5, 589.123 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exitArea"]
 position = Vector2( -5.23828, -6.36066 )
 shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource( 9 )]
 [connection signal="body_entered" from="fallzone" to="Caco" method="_on_fallzone_body_entered"]
 [connection signal="body_entered" from="exitArea" to="Caco" method="_on_exitArea_body_entered"]

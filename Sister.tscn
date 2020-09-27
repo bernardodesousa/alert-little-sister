@@ -21,5 +21,6 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 1
 playing = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
