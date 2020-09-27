@@ -12,18 +12,21 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 color = Color( 0.113725, 0.0117647, 0.121569, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 187.0
-margin_top = 120.0
-margin_right = 856.0
-margin_bottom = 466.0
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = -100.0
+margin_bottom = -100.0
+rect_min_size = Vector2( 500, 500 )
 custom_fonts/normal_font = ExtResource( 1 )
 text = "Créditos
 
@@ -34,15 +37,23 @@ Lucas Bernardo de Sousa (primo) - music, level assets
 
 Agradecimentos especiais a:
 Esther Sousa (irmã) - inspiração"
+fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TitleButton" type="Button" parent="."]
-margin_left = 752.0
-margin_top = 480.0
-margin_right = 967.0
-margin_bottom = 562.0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -210.0
+margin_top = -84.0
+margin_right = -50.0
+margin_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 100, 60 )
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.945098, 0.831373, 0.964706, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )

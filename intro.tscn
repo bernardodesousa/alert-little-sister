@@ -3,7 +3,7 @@
 [ext_resource path="res://title_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://normal_dynamicfont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://PlayButton.gd" type="Script" id=3]
-[ext_resource path="res://themeSong.tscn" type="PackedScene" id=4]
+[ext_resource path="res://music.tscn" type="PackedScene" id=4]
 
 [node name="intro" type="Control"]
 anchor_right = 1.0
@@ -13,18 +13,28 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 color = Color( 0.901961, 0.819608, 0.945098, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 anchor_right = 1.0
-anchor_bottom = 0.307
-margin_top = 80.0
-margin_bottom = -5.20001
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="ColorRect/VBoxContainer"]
+margin_right = 924.0
+margin_bottom = 96.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 0.866667, 0.478431, 0.929412, 1 )
 custom_colors/font_outline_modulate = Color( 0.698039, 0.623529, 0.0941176, 1 )
@@ -34,28 +44,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="title" type="RichTextLabel" parent="."]
-margin_left = 64.0
-margin_top = 192.0
-margin_right = 960.0
-margin_bottom = 458.0
+[node name="title" type="RichTextLabel" parent="ColorRect/VBoxContainer"]
+margin_top = 116.0
+margin_right = 924.0
+margin_bottom = 266.0
 custom_fonts/normal_font = ExtResource( 2 )
 custom_colors/default_color = Color( 0.329412, 0.0313726, 0.505882, 1 )
 text = "Oi, meu nome é Caco e eu tenho uma irmãzinha muito fofa. Mas às vezes ela é meio grudenta e eu preciso fugir dela. Preciso da sua ajuda pra escapar do milésimo abraço grudento do dia!
 
 Use as setas direita e esquerda para andar e barra de espaço para pular."
+fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="."]
-anchor_top = 0.626
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 203.835
-margin_top = 50.9583
-margin_right = -571.165
-margin_bottom = -102.442
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+margin_top = 286.0
+margin_right = 924.0
+margin_bottom = 336.0
+custom_constants/separation = 20
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_left = 358.0
+margin_right = 458.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.901961, 0.819608, 0.945098, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
@@ -66,14 +80,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CreditsButton" type="Button" parent="."]
-anchor_top = 0.626
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 766.726
-margin_top = 143.716
-margin_right = -8.27362
-margin_bottom = -9.68359
+[node name="CreditsButton" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_left = 478.0
+margin_right = 566.0
+margin_bottom = 50.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.639216, 0.333333, 0.803922, 1 )
 custom_colors/font_color_hover = Color( 0.568627, 0.0862745, 0.752941, 1 )
@@ -85,6 +95,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource( 4 )]
-[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_CreditsButton_pressed"]
+[node name="AudioStreamPlayer" parent="." instance=ExtResource( 4 )]
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/PlayButton" to="ColorRect/VBoxContainer/HBoxContainer/PlayButton" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/CreditsButton" to="ColorRect/VBoxContainer/HBoxContainer/CreditsButton" method="_on_CreditsButton_pressed"]
